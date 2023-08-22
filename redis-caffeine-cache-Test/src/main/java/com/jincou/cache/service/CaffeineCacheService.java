@@ -42,7 +42,7 @@ public class CaffeineCacheService {
      * 获取或加载缓存项
      * <p>
      */
-    @Cacheable(key = "'cache_user_id_' + #userId", value = "userCache")
+    @Cacheable(value = "userCache", key = "#userId")
     public UserDTO queryUser(String userId) {
         UserDTO userDTO = userMap.get(userId);
         try {
